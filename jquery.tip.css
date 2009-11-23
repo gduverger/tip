@@ -1,0 +1,57 @@
+body {
+	font-size: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size-adjust: none;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 24px;
+	text-align: left;
+}
+
+/* The hint to Hide and Show */
+.tip {
+	display: none;
+	position: absolute;
+	width: 200px;
+	border: 1px solid #c93;
+	padding: 10px;
+	margin-top: 13px;
+	/* to fix IE6, I can't just declare a background-color,
+	I must do a bg image, too!  So I'm duplicating the pointer.gif
+	image, and positioning it so that it doesn't show up
+	within the box */
+	background: #ffc url("pointer.gif") no-repeat 5px -10px;
+	z-index:2;
+}
+
+/* The pointer image is hadded by using another span */
+.tip .tip-pointer {
+	position: absolute;
+	left: 5px;
+	top: -10px;
+	width: 19px;
+	height: 10px;
+	background: url("pointer.gif") left top no-repeat;
+}
+
+.tip-hidden .tip {
+	width: auto;
+}
+
+.tip .tip-show {
+	display: none;
+}
+
+.tip-hidden .tip {
+	width: auto;
+}
+
+.tip-hidden .tip-content,
+.tip-hidden .tip-hide {
+	display: none;
+}
+
+.tip-hidden .tip-show {
+	display: inline;
+}
